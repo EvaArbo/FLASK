@@ -1,5 +1,29 @@
-pipenv install flask flask-sqlalchemy flask-migrate
+
 export PIPENV_VENV_IN_PROJECT=1
+pipenv install
+pipenv shell
 https://app.capacities.io/home/33b6f57c-fe74-414c-9262-ab36101ca1cb
 pipenv install "psycopg[binary,pool]"
 password P4+2ygpUyL+sV7v
+pipenv install flask flask-sqlalchemy flask-migrate "psycopg[binary,pool]" python-dotenv
+#running migrations
+flask --app main db init
+flask --app main db migrate -m "Initial migration"
+flask --app main db upgrade
+
+
+#API(REST)
+Representation state Transfer Application Programming
+Rest= Architectural style based on HTTP:
+TCP()-Makes sure the packages sent reach intac
+
+
+Resources
+*Text
+*Blogs
+
+
+HTTP METHODS
+*GET
+*PUT/PATCH
+*DELETE

@@ -2,8 +2,7 @@ from flask import Flask
 from .config import Config
 from .db import db,migrate
 from .models import *
-from app.routes import student_bp
-
+from .routes import student_bp
 
 def create_app():
     app=Flask(__name__)
@@ -13,7 +12,7 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app,db)
 
-    #Register blueprints
-    app.register_blueprint(student_bp, url_prefix="/student")
+    #register blueprint
+    app.register_blueprint(student_bp,url_prefix="/student")
 
     return app

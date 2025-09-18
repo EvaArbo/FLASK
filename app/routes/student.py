@@ -52,9 +52,9 @@ def edit_single_student(student_id):
         "created_at": student.created_at
     }), 200
 
-# -------------------------------
+
 # Delete single student
-# -------------------------------
+
 @student_bp.route("/delete/<int:student_id>", methods=["DELETE"])
 def delete_student(student_id):
     student = Student.query.get(student_id)
@@ -70,9 +70,9 @@ def delete_student(student_id):
 
 
 
-# -------------------------------
+
 # Add student (JSON)
-# -------------------------------
+
 @student_bp.route("/add/json", methods=["POST"])
 def add_student_json():
     data = request.get_json(force=True)

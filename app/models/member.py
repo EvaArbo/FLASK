@@ -12,3 +12,6 @@ class Member(db.Model):
     email=db.Column(db.String(500),nullable=False,unique=True)
     password=db.Column(db.Text,nullable=False)
     created_at=db.Column(db.DateTime(timezone=True),default=uct_now,nullable=False)
+
+
+    

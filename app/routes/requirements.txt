@@ -1,1 +1,6 @@
 pipenv install flask-bcrypt #to encryp password
+flask db migrate -m"added foreign key"
+flask db upgrade
+#Flask jwt helps to create tokens
+pipenv install flask-jwt-extended
+https://linuxcapable.com/install-anydesk-on-ubuntu-linux/

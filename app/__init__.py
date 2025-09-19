@@ -4,8 +4,10 @@ from .db import db,migrate
 from .models import *
 from .routes import student_bp, member_bp
 from flask_bcrypt import Bcrypt
+from flask_jwt_extended import JWTManager
 
 bcrypt=Bcrypt()
+jwt=JWTManager()
 def create_app():
     app=Flask(__name__)
     app.config.from_object(Config)
@@ -14,6 +16,8 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app,db)
     bcrypt.init_app(app)
+    jwt=JWTManager(app)
+    jwt.init_app(app)
 
     #register blueprint
     app.register_blueprint(student_bp,url_prefix="/student")

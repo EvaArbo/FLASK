@@ -12,3 +12,6 @@ class Student(db.Model):
     name=db.Column(db.String(100),nullable=False)
     email=db.Column(db.String(500),nullable=False,unique=True)
     created_at=db.Column(db.DateTime(timezone=True),default=uct_now,nullable=False)
+
+    #track student created by membeer
+    created_by_member_id=db.Column(db.Integer, db.ForeignKey("member.id"),nullable=True)

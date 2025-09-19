@@ -177,9 +177,9 @@ def add_student_picture():
     }), 201
 
 
-# -------------------------------
+
 # Serve uploaded file
-# -------------------------------
+
 @student_bp.route("/picture/<filename>", methods=["GET"])
 def serve_file(filename):
     cwd = os.path.dirname(__file__)
@@ -187,9 +187,9 @@ def serve_file(filename):
     return send_from_directory(uploads, filename)
 
 
-# -------------------------------
+
 # List all students
-# -------------------------------
+
 @student_bp.route("/list", methods=["GET"])
 def list_users():
     students = Student.query.all()
